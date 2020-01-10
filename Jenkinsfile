@@ -1,9 +1,8 @@
 pipeline {
-   agent {
-       docker {image '3.7-alpine3.10'}
-   }
+   agent any
 
    stages {
+      
       stage('Build') {
         steps {
           echo 'Building...'
