@@ -10,6 +10,12 @@ pipeline {
           sudo python3 -m venv venv
           sudo . venv/bin/activate
           sudo pip install -r requirements.txt
+        }
+   }
+      stage('unittest') {
+        steps {
+          echo 'Unit test...'
+          sudo . venv/bin/activate
           sudo flake8 --exclude=venv* --statistics
           sudo pytest -v --cov=calculator
         }
